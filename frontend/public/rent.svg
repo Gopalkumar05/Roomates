@@ -1,0 +1,18 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- House Roof -->
+  <path d="M4 22L24 6L44 22" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- House Base -->
+  <rect x="10" y="22" width="28" height="20" rx="3" fill="#3B82F6" opacity="0.9"/>
+  
+  <!-- Door -->
+  <rect x="21" y="28" width="6" height="14" rx="1.5" fill="#1E3A8A"/>
+
+  <!-- Rupee Circle -->
+  <circle cx="38" cy="14" r="7" fill="#10B981"/>
+  <text x="38" y="18" text-anchor="middle" font-size="10" font-family="Inter, Arial" fill="white" font-weight="bold">₹</text>
+
+  <!-- Roommate Dots -->
+  <circle cx="12" cy="14" r="4" fill="#F59E0B"/>
+  <circle cx="18" cy="14" r="4" fill="#F97316"/>
+</svg>
