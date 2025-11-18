@@ -13,7 +13,7 @@ import auth from '../middleware/auth.js'
 dotenv.config();
 const router = express.Router();
 
-// Email transporter configuration
+
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
   auth: {
@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Generate random token
+
 const generateToken = () => {
   return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 };
@@ -248,16 +248,15 @@ router.post('/reset-password/:token', async (req, res) => {
       return res.status(400).json({ error: 'Invalid or expired reset token' });
     }
 
-    // Hash new password
+
     const hashedPassword = await bcrypt.hash(password, 12);
 
-    // Update user password and clear reset token
     user.password = hashedPassword;
     user.resetPasswordToken = undefined;
     user.resetPasswordExpires = undefined;
     await user.save();
 
-    // Send confirmation email
+  
     try {
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
@@ -401,7 +400,7 @@ router.put('/change-password', async (req, res) => {
   }
 });
 
-// routes/auth.js - Updated stats route with better error handling
+
 router.get('/stats', auth, async (req, res) => {
   try {
     const userId = req.user.id;
@@ -450,7 +449,7 @@ router.get('/stats', auth, async (req, res) => {
     }
     console.log('Total expenses:', totalExpenses);
 
-    // Get settlements count where user is involved and status is completed
+ 
     const settlements = await Settlement.countDocuments({
       $or: [
         { fromUser: new mongoose.Types.ObjectId(userId) },
