@@ -179,7 +179,7 @@ router.post('/forgot-password', async (req, res) => {
 
     // Send reset email
    // const resetUrl = `${process.env.FRONTEND_URL || 'https://roomates-k4tg.onrender.com'}/reset-password/${resetToken}`;
-     const resetUrl = `${https://roomates-k4tg.onrender.com}/reset-password/${resetToken}`;
+     const resetUrl = `${'https://roomates-k4tg.onrender.com'}/reset-password/${resetToken}`;
 
     try {
       await transporter.sendMail({
